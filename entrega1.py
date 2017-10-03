@@ -89,24 +89,24 @@ class Problem(SearchProblem):
         return distancia
 
 def resolver(metodo_busqueda, posiciones_aparatos):
-    Inicial = [(3,3)]
-    for ap in posiciones_aparatos:
-        Inicial.append((ap[0], ap[1], 300))
-    problema = Problem(tuple(Inicial))
-    visor = BaseViewer()
-    if metodo_busqueda == "breadth_first":
-        return breadth_first(problema, graph_search=True)
-    if metodo_busqueda == "astar":
-        return astar(problema, graph_search=True)
-    if metodo_busqueda == "greedy":
-        return greedy(problema, graph_search=True)
-    if metodo_busqueda == "depth_first":
-        return depth_first(problema, graph_search=True)
+	Inicial = [(3,3)]
+	for ap in posiciones_aparatos:
+		Inicial.append((ap[0], ap[1], 300))
+	if metodo_busqueda == "breadth_first":
+		return breadth_first(Problem(tuple(Inicial)), graph_search=True)
+	if metodo_busqueda == "astar":
+		return astar(Problem(tuple(Inicial)), graph_search=True)
+	if metodo_busqueda == "greedy":
+		return greedy(Problem(tuple(Inicial)), graph_search=True)
+	if metodo_busqueda == "depth_first":
+		return depth_first(Problem(tuple(Inicial)), graph_search=True)
         
 if __name__ == '__main__':
-    posiciones = [(1,2),(2,0),(3,0)]
-    resultado = resolver('astar', posiciones)
-    print 'Prueba astar'
-    print resultado.path()
-    print resultado.state
-    print resultado.cost
+	Inicial = ((3,3),(1,2,300),(2,0,300),(3,0,300))
+	print ('Prueba breadth_first')	
+	visor = BaseViewer()
+	resultado = breadth_first(Problem(Inicial), graph_search = True, viewer = visor)
+	print (resultado.path())
+	print (resultado.state)
+	print (resultado.cost)
+	print (visor.stats)

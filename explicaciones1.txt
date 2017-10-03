@@ -1,3 +1,2 @@
-1: Memory Error a los 20 minutos
-2: Memory Error a los 12 minutos
-4: Memory Error a los 49 minutos
+1:Memoria RAM llena a los 30 minutos
+4:Memoria RAM llena a los 49 minutos
