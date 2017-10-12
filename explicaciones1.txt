@@ -1,2 +1,2 @@
 1:Memoria RAM llena a los 30 minutos
-4:Memoria RAM llena a los 49 minutos
+2:Memoria RAM llena a los 49 minutos
