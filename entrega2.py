@@ -17,7 +17,9 @@ dominios = {variable: list(range(1,6)) for variable in variables}
 
 dominios['Agnar'] = [1,]
 
-dominios['Escudo'] = [3,]
+#dominios['Escudo'] = [3,]
+
+dominios['Pajaros'] = [3,]
 
 def izquierda_derecha(variables, values):
 	return values[0] + 1 == values[1]
@@ -42,9 +44,10 @@ restricciones.append((('Martillo','Anillo'),misma_posicion))
 restricciones.append((('Amarilla','Hacha'),misma_posicion))
 restricciones.append((('Cinturon','Hacha'),al_lado))
 restricciones.append((('Lanza','Pulsera'),al_lado))
-restricciones.append((('Espada','Escudo'),misma_posicion))
+restricciones.append((('Espada','Dragon'),misma_posicion))
 restricciones.append((('Lanza','Arboles'),al_lado))
 restricciones.append((('Agnar','Azul'),al_lado))
+#restricciones.append((('Espada','Escudo'),misma_posicion))
 
 for i,j in itertools.combinations(armas, 2):
     restricciones.append(((i, j), diferentes))
